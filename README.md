@@ -19,7 +19,7 @@
     - 代表性的是[A*寻路算法](http://www.zouyang1230.com/project/jssf/axl.html)：<br />
     ![A*寻路](https://github.com/zouyang1230/JS-algorithms/raw/master/images/axl.gif)
     - 算法原理：如下图
-    ![A*寻路算法原理图](https://github.com/zouyang1230/JS-algorithms/raw/master/images/axl2.gif)<br />
+    ![A*寻路算法原理图](https://github.com/zouyang1230/JS-algorithms/raw/master/images/axl2.jpg)<br />
     - 使用公式（A*估价函数）：
         - f(n)  =  g(n) + h(n)，f(n)是从下图A起始点到目标点B的距离，g(n)和h(n)如下图所示路径距离，g(n)与h(n)的和就是f(n)距离。2条路径的f(n)值相比，就能得到哪条路径更短。
         - ![A*寻路算法图示](https://github.com/zouyang1230/JS-algorithms/raw/master/images/axl2.gif)
