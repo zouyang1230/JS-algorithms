@@ -17,12 +17,15 @@
 
     - 启发式搜索 又称为有信息搜索(Informed Search)，它是利用问题拥有的启发信息来引导搜索，达到减少搜索范围、降低问题复杂度的目的，这种利用启发信息的搜索过程称为启发式搜索。所以它又能保证性能，又能找到最优路线的搜索。有点像人类的思维。
     - 代表性的是[A*寻路算法](http://zouyang1230.com/project/threejs/textGeometry.html)：<br />
-   [A*寻路](https://github.com/zouyang1230/JS-algorithms/raw/master/images/axl.gif)
+    [A*寻路](https://github.com/zouyang1230/JS-algorithms/blob/master/images/axl.gif)
+    - 
     - 使用公式（A*估价函数）：
         - f(n)  =  g(n) + h(n)
         - f(n)是n节点的估价函数
-        - g(n)是初始点到n节点的实际代价
+        - g(n)是初始点到n节点的实际代价（实际代价：一个点到另一个点的最短路径）
         - h(n)是n节点到目标点的实际代价
+
+2、
 
 
 
