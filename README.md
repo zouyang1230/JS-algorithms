@@ -1,10 +1,10 @@
-# JS-数据结构与算法
+﻿# JS-数据结构与算法
 
 ### 笔记记录：
 
 算法：就是定义良好的计算过程，它取一个或一组值作为输入，并产生出一个或一组值作为输出。
 
-1、寻路搜索模式(3种)
+1、图算法之寻路搜索模式(3种)
 - 深度优先搜索:
     - 深度优先搜索过程简要来说是对每一个可能的分支路径深入到不能再深入为止，而且每个节点只能访问一次.
     - 也就是从起点找到相邻的，再从相邻的，找到下一个相邻的，一层层往下查找，一直搜索到目标点。它并没有办法找到最优的路线，可能会绕一大圈才找到目标点。
@@ -37,11 +37,86 @@
 - 行列互换算法可以用于连连看等消除游戏
 
 <br />
-3、未完待续
+3、冒泡排序算法（Bubble Sort）
+- 原理：前一个数与后一个数进行值的比较，然后进行位置互换。如下图：
+![冒泡排序算法](https://github.com/zouyang1230/JS-algorithms/raw/master/images/maopao.gif)
+实现代码：
+```javascript
+function bubbleSort(arr) {
+	var nLen = arr.length;
+	for (var i=0; i<nLen; i++) {
+   	 for (var j=0; j<nLen; j++) {
+     	   var a = arr[j];
+     	   var b = arr[j+1];
+     	   if (a < b) {
+     	       arr[j] = b;
+      	      arr[j+1] = a;
+     	   }
+  	  }
+	}
+  return arr;
+}
+console.log(bubbleSort([3,4,1,2,7,-12,5,6]));	//[7, 6, 5, 4, 3, 2, 1, -12]
+```
+上例在计算时有重复操作，可再优化为：
+```javascript
+function bubbleSort(arr) {
+	var nLen = arr.length;
+	for (var i=0; i<arr.length-1; i++) {
+	    var f = false;
+	    for (var j=0; j<arr.length-1-i; j++) {    //第一轮循环结束，就把最小的那个数排到了最末尾，最末尾那次循环没必要了
+	        var a = arr[j];
+	        var b = arr[j+1];
+	        if (a < b) {
+	            f = true;
+	            arr[j] = b;
+	            arr[j+1] = a;
+	        }
+	    }
+	    if (!f) {  //如果前后项比较了遍也没a<b的，此数组顺序已是降序，不用循环了，直接终止循环。
+	        break;
+	    }
+	}
+  return arr;
+}
+console.log(bubbleSort([3,4,1,2,7,-12,5,6]));	//[7, 6, 5, 4, 3, 2, 1, -12]
+```
 
+4、快速排序
+- 快速排序应该算是在冒泡排序基础上的递归分治法。
+- 下例内部运用了二分查找，二分查找的基本思想是将n个元素分成大致相等的两部分（也就是除以2），取a[n/2]与x做比较
+```javascript
+function quickSort(arr)    //传入数组参数,例如[ 55,23,1,28,16,3,-5,99 ]
+{
+    if(arr.length <= 1)
+    {
+        return arr;
+    }
 
+    var num = Math.floor(arr.length/2);	//二分查找
+    var numValue = arr.splice(num,1);
 
+    var left = [];
+    var right = [];
 
+    for(var i=0;i<arr.length;i++)
+    {
+        if( arr[i] < numValue )
+        {
+            left.push(arr[i]);
+        }
+        else
+        {
+            right.push(arr[i]);
+        }
+    }
+    return quickSort(left).concat([numValue],quickSort(right));    //递归
+}
+
+alert(quickSort([3,4,1,2,7,-12,5,6]));	//-12,1,2,3,4,5,6,7
+```
+
+5、
 
 
 
