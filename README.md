@@ -27,7 +27,7 @@
         - f(n)是n节点的估价函数
         - g(n)是初始点到n节点的实际代价（实际代价：一个点到另一个点的最短路径）
         - h(n)是n节点到目标点的实际代价
-
+<br />
 2、行列互换算法
 - 互换前：<br />
 ![未互换前](https://github.com/zouyang1230/JS-algorithms/raw/master/images/hlhh1.jpg)
@@ -39,8 +39,12 @@
 <br />
 3、冒泡排序算法（Bubble Sort）
 - 原理：前一个数与后一个数进行值的比较，然后进行位置互换。如下图：
+
 ![冒泡排序算法](https://github.com/zouyang1230/JS-algorithms/raw/master/images/maopao.gif)
+
 实现代码：
+
+
 ```javascript
 function bubbleSort(arr) {
 	var nLen = arr.length;
@@ -58,7 +62,9 @@ function bubbleSort(arr) {
 }
 console.log(bubbleSort([3,4,1,2,7,-12,5,6]));	//[7, 6, 5, 4, 3, 2, 1, -12]
 ```
+
 上例在计算时有重复操作，可再优化为：
+
 ```javascript
 function bubbleSort(arr) {
 	var nLen = arr.length;
@@ -80,11 +86,13 @@ function bubbleSort(arr) {
   return arr;
 }
 console.log(bubbleSort([3,4,1,2,7,-12,5,6]));	//[7, 6, 5, 4, 3, 2, 1, -12]
-```
 
+```
+<br />
 4、快速排序
 - 快速排序应该算是在冒泡排序基础上的递归分治法。
 - 下例内部运用了二分查找，二分查找的基本思想是将n个元素分成大致相等的两部分（也就是除以2），取a[n/2]与x做比较
+
 ```javascript
 function quickSort(arr)    //传入数组参数,例如[ 55,23,1,28,16,3,-5,99 ]
 {
@@ -115,7 +123,7 @@ function quickSort(arr)    //传入数组参数,例如[ 55,23,1,28,16,3,-5,99 ]
 
 alert(quickSort([3,4,1,2,7,-12,5,6]));	//-12,1,2,3,4,5,6,7
 ```
-
+<br />
 5、
 
 
